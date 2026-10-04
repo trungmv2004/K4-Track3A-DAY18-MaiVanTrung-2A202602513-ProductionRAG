@@ -1,0 +1,655 @@
+{
+  "aggregate": {
+    "faithfulness": 0.9678571428571429,
+    "answer_relevancy": 0.5075348270593677,
+    "context_precision": 0.3583333333025,
+    "context_recall": 0.4333333333333334
+  },
+  "num_questions": 20,
+  "per_question": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến số ngày nhân viên được nghỉ khi kết hôn. Do đó, phần này không tìm thấy bằng chứng trong context.",
+      "contexts": [
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt."
+      ],
+      "ground_truth": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên?",
+      "answer": "Bảo hiểm sức khỏe PVI có hạn mức **200.000.000 VNĐ/năm** cho nhân viên (bao gồm nội trú, ngoại trú và nha khoa) [1].",
+      "contexts": [
+        "# Chính sách bảo hiểm sức khỏe\n> Phiên bản: 1.5 | Ngày hiệu lực: 01/04/2024 | Phòng ban: Nhân sự\n\n## Bảo hiểm cho nhân viên\nCông ty cung cấp gói bảo hiểm sức khỏe toàn diện qua **PVI Insurance** cho tất cả nhân viên chính thức. Hạn mức bảo hiểm: **200.000.000 VNĐ/năm** bao gồm nội trú, ngoại trú và nha khoa.",
+        "## Gói gia đình\nNhân viên có thể đăng ký thêm gói bảo hiểm cho người thân (vợ/chồng, con dưới 18 tuổi) với hạn mức **50.000.000 VNĐ/năm/người**. Chi phí gói gia đình: công ty hỗ trợ 50%, nhân viên đóng 50% qua khấu trừ lương hàng tháng.\n\n## Quy trình sử dụng\nNhân viên xuất trình thẻ bảo hiểm PVI tại các bệnh viện/phòng khám trong danh sách liên kết. Trường hợp khám ngoài danh sách, nhân viên thanh toán trước và nộp hồ sơ bồi hoàn trong vòng 30 ngày. Thời gian xử lý bồi hoàn: 10-15 ngày làm việc.",
+        "## Yêu cầu kỹ thuật\n- Kết nối **VPN** bắt buộc khi làm việc từ xa\n- Đảm bảo đường truyền internet ổn định (tối thiểu 20Mbps)\n- Sử dụng thiết bị công ty hoặc thiết bị cá nhân đã cài MDM\n- Tham gia đầy đủ các cuộc họp online theo lịch\n\n## Hạn chế\nMột số vị trí không được áp dụng WFH: lễ tân, nhân viên kho, bảo vệ, nhân viên vận hành hạ tầng IT. Trong các tuần có sự kiện toàn công ty (All-hands, Team building), WFH không được áp dụng."
+      ],
+      "ground_truth": "Hạn mức bảo hiểm sức khỏe PVI cho nhân viên là 200.000.000 VNĐ/năm, bao gồm nội trú, ngoại trú và nha khoa.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.98893881843555,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Phụ cấp ăn trưa hàng tháng là bao nhiêu?",
+      "answer": "Phụ cấp ăn trưa hàng tháng là **1.000.000 VNĐ/tháng** [2].",
+      "contexts": [
+        "# Chính sách công tác phí\n> Phiên bản: 1.5 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Tài chính\n\n## Công tác trong nước\n- **Phụ cấp ngày**: **800.000 VNĐ/ngày** (bao gồm ăn uống và di chuyển nội thành)\n- **Khách sạn**: tối đa **1.200.000 VNĐ/đêm**, thanh toán theo hóa đơn thực tế\n- **Vé máy bay**: hạng phổ thông, đặt trước ít nhất 5 ngày. Cấp Manager trở lên được bay hạng thương gia cho chặng trên 2 giờ",
+        "# Chính sách phụ cấp\n> Phiên bản: 2.1 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Phụ cấp ăn trưa\nTất cả nhân viên được hưởng phụ cấp ăn trưa **1.000.000 VNĐ/tháng**, chi trả cùng kỳ lương. Phụ cấp này không áp dụng cho những ngày nghỉ phép, nghỉ ốm hoặc công tác ngoài.\n\n## Phụ cấp đi lại\nNhân viên có tần suất công tác ngoài văn phòng trên 8 ngày/tháng được hưởng phụ cấp đi lại theo thực tế, tối đa **2.000.000 VNĐ/tháng**. Phải có chứng từ hợp lệ (vé xe, hóa đơn xăng, Grab receipt).",
+        "## Quy trình đề xuất\n1. Tạo phiếu đề xuất mua sắm trên hệ thống Procurement Portal\n2. Đính kèm ít nhất 3 báo giá cho đơn hàng trên 10.000.000 VNĐ\n3. Chờ phê duyệt theo thẩm quyền tương ứng\n4. Phòng Mua sắm đặt hàng và theo dõi giao nhận\n\n## Lưu ý đặc biệt\nMua sắm thiết bị CNTT (laptop, server, phần mềm) cần có xác nhận của phòng CNTT về cấu hình kỹ thuật trước khi đề xuất. Đơn hàng khẩn cấp có thể bỏ qua yêu cầu 3 báo giá nhưng phải có giải trình bằng văn bản."
+      ],
+      "ground_truth": "Phụ cấp ăn trưa là 1.000.000 VNĐ/tháng, chi trả cùng kỳ lương.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9707895791722393,
+      "context_precision": 0.49999999995,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer": "Dựa trên context được cung cấp, không tìm thấy thông tin cụ thể về tổng số ngày phép năm mà nhân viên được nghỉ [1], [2], [3]. \n\nContext chỉ đề cập đến các quy định liên quan đến phép năm như sau:\n* Phải đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal [3].\n* Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt [3].\n* Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp [3].\n* Nhân viên có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại [3].",
+      "contexts": [
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại."
+      ],
+      "ground_truth": "Theo chính sách hiện hành (v2024), nhân viên được nghỉ 15 ngày phép năm có lương. Chính sách cũ (v2023) là 12 ngày nhưng đã bị thay thế.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+      "answer": "Dựa trên các tài liệu được cung cấp, có hai mâu thuẫn về số năm thâm niên được cộng thêm ngày phép:\n\n* Theo tài liệu [1] (Chính sách hiện hành): Nhân viên có thâm niên từ **5 năm trở lên** được cộng thêm 1 ngày phép cho mỗi 5 năm làm việc liên tục [1].\n* Theo tài liệu [2]: Nhân viên có thâm niên từ **3 năm trở lên** được cộng thêm 1 ngày phép cho mỗi 3 năm làm việc liên tục [2].\n\nNguồn: [1], [2].",
+      "contexts": [
+        "## Thâm niên công tác\nNhân viên có thâm niên từ **5 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 5 năm làm việc liên tục. Ví dụ: nhân viên 10 năm thâm niên được 14 ngày phép.\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 3 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 3 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp.",
+        "## Thâm niên công tác\nNhân viên có thâm niên từ **3 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 3 năm làm việc liên tục. Ví dụ: nhân viên 9 năm thâm niên được 18 ngày phép (15 + 3).",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo."
+      ],
+      "ground_truth": "Theo chính sách v2024 hiện hành, nhân viên có thâm niên từ 3 năm trở lên được cộng thêm 1 ngày phép cho mỗi 3 năm. Chính sách cũ v2023 yêu cầu 5 năm.",
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.9457644757323668,
+      "context_precision": 0.49999999995,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Mật khẩu phải có tối thiểu bao nhiêu ký tự?",
+      "answer": "Dựa trên các tài liệu được cung cấp, số lượng ký tự tối thiểu của mật khẩu tùy thuộc vào phiên bản chính sách:\n\n* Theo **Chính sách mật khẩu (Phiên bản cũ v1.0)**: Mật khẩu phải có tối thiểu **8 ký tự** [1].\n* Theo **Chính sách mật khẩu (Phiên bản hiện hành v2.0)**: Mật khẩu phải có tối thiểu **12 ký tự** [3].",
+      "contexts": [
+        "# Chính sách mật khẩu (Phiên bản cũ)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2022 | Phòng ban: CNTT | Trạng thái: ĐÃ THAY THẾ bởi v2.0\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **8 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường và 1 số. Không được sử dụng tên đăng nhập hoặc các thông tin cá nhân dễ đoán làm mật khẩu.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 90 ngày**. Hệ thống sẽ tự động nhắc nhở trước 7 ngày. Mật khẩu mới không được trùng với 3 mật khẩu gần nhất.",
+        "## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp.",
+        "# Chính sách mật khẩu (Phiên bản hiện hành)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/07/2024 | Phòng ban: CNTT\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **12 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt (!@#$%^&*). Khuyến khích sử dụng passphrase dài hơn 16 ký tự."
+      ],
+      "ground_truth": "Theo chính sách hiện hành (v2.0), mật khẩu phải có tối thiểu 12 ký tự. Chính sách cũ (v1.0) yêu cầu 8 ký tự nhưng đã bị thay thế.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8874459356788837,
+      "context_precision": 0.3333333333,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Bao lâu phải đổi mật khẩu một lần?",
+      "answer": "Dựa trên các tài liệu được cung cấp, chu kỳ thay đổi mật khẩu như sau:\n\n* **Chính sách hiện hành:** Mật khẩu phải được thay đổi **mỗi 120 ngày** [1].\n* **Chính sách cũ (Phiên bản 1.0 - Đã thay thế):** Mật khẩu phải được thay đổi **mỗi 90 ngày** [2].",
+      "contexts": [
+        "## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp.",
+        "# Chính sách mật khẩu (Phiên bản cũ)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2022 | Phòng ban: CNTT | Trạng thái: ĐÃ THAY THẾ bởi v2.0\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **8 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường và 1 số. Không được sử dụng tên đăng nhập hoặc các thông tin cá nhân dễ đoán làm mật khẩu.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 90 ngày**. Hệ thống sẽ tự động nhắc nhở trước 7 ngày. Mật khẩu mới không được trùng với 3 mật khẩu gần nhất.",
+        "## Yêu cầu kỹ thuật\n- Kết nối **VPN** bắt buộc khi làm việc từ xa\n- Đảm bảo đường truyền internet ổn định (tối thiểu 20Mbps)\n- Sử dụng thiết bị công ty hoặc thiết bị cá nhân đã cài MDM\n- Tham gia đầy đủ các cuộc họp online theo lịch\n\n## Hạn chế\nMột số vị trí không được áp dụng WFH: lễ tân, nhân viên kho, bảo vệ, nhân viên vận hành hạ tầng IT. Trong các tuần có sự kiện toàn công ty (All-hands, Team building), WFH không được áp dụng."
+      ],
+      "ground_truth": "Theo chính sách hiện hành (v2.0), mật khẩu phải được thay đổi mỗi 120 ngày. Chính sách cũ yêu cầu 90 ngày nhưng đã bị thay thế.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8751294423100328,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Có cần kích hoạt xác thực đa yếu tố (MFA) không?",
+      "answer": "Có, tất cả nhân viên bắt buộc kích hoạt xác thực đa yếu tố (MFA) cho tài khoản email, VPN và các hệ thống nội bộ [1].",
+      "contexts": [
+        "## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp.",
+        "# Chính sách làm việc từ xa (WFH)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/07/2024 | Phòng ban: Nhân sự\n\n## Quy định chung\nNhân viên chính thức được phép làm việc từ xa tối đa **2 ngày/tuần**. Lịch WFH phải được đăng ký và phê duyệt bởi quản lý trực tiếp vào **thứ Hai** đầu tuần.",
+        "# Chính sách mật khẩu (Phiên bản cũ)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2022 | Phòng ban: CNTT | Trạng thái: ĐÃ THAY THẾ bởi v2.0\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **8 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường và 1 số. Không được sử dụng tên đăng nhập hoặc các thông tin cá nhân dễ đoán làm mật khẩu.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 90 ngày**. Hệ thống sẽ tự động nhắc nhở trước 7 ngày. Mật khẩu mới không được trùng với 3 mật khẩu gần nhất."
+      ],
+      "ground_truth": "Có, theo chính sách mật khẩu v2.0 hiện hành, tất cả nhân viên bắt buộc kích hoạt MFA cho email, VPN và hệ thống nội bộ. Chính sách cũ v1.0 không yêu cầu MFA.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8834127150443157,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin hay bằng chứng nào nói về việc nhân viên thử việc có được nghỉ phép năm hay không [1], [2], [3].",
+      "contexts": [
+        "## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại.",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt."
+      ],
+      "ground_truth": "KHÔNG. Nhân viên thử việc KHÔNG được nghỉ phép năm. Nếu cần nghỉ, phải xin nghỉ không lương và được trưởng phòng phê duyệt.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Khi phát hiện malware trên máy, nhân viên có nên tự xử lý không?",
+      "answer": "Khi phát hiện malware trên máy, nhân viên **tuyệt đối không tự ý xử lý** hoặc tìm cách khắc phục mà không có sự hướng dẫn của đội CNTT [1].",
+      "contexts": [
+        "# Quy trình xử lý sự cố bảo mật\n> Phiên bản: 1.1 | Ngày hiệu lực: 01/05/2024 | Phòng ban: CNTT & An ninh thông tin\n\n## Báo cáo sự cố\nKhi phát hiện hoặc nghi ngờ sự cố bảo mật, nhân viên **phải báo cáo trong vòng 1 giờ** qua email **helpdesk@cty.vn** hoặc hotline CNTT nội bộ (ext. 9999). Tuyệt đối **không tự ý xử lý malware** hoặc tìm cách khắc phục mà không có sự hướng dẫn của đội CNTT.",
+        "## Phân loại sự cố\n- **Nghiêm trọng**: rò rỉ dữ liệu Bí mật/Tối mật, tấn công ransomware → xử lý trong 2 giờ\n- **Cao**: phishing thành công, tài khoản bị chiếm → xử lý trong 4 giờ\n- **Trung bình**: phát hiện malware trên 1 máy, truy cập trái phép → xử lý trong 8 giờ\n- **Thấp**: email spam, cảnh báo antivirus tự động → xử lý trong 24 giờ\n\n## Trách nhiệm\nKhông báo cáo sự cố hoặc tự ý xử lý sẽ bị xem là vi phạm nghiêm trọng quy chế bảo mật và có thể bị kỷ luật theo mức cảnh cáo hoặc sa thải.",
+        "## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp."
+      ],
+      "ground_truth": "KHÔNG. Nhân viên tuyệt đối không được tự ý xử lý malware. Phải báo cáo trong vòng 1 giờ qua helpdesk@cty.vn hoặc hotline CNTT. Tự ý xử lý bị coi là vi phạm nghiêm trọng.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9401915973023808,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI không?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến việc nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI hay không. Phần này không tìm thấy trong dữ liệu.",
+      "contexts": [
+        "## Gói gia đình\nNhân viên có thể đăng ký thêm gói bảo hiểm cho người thân (vợ/chồng, con dưới 18 tuổi) với hạn mức **50.000.000 VNĐ/năm/người**. Chi phí gói gia đình: công ty hỗ trợ 50%, nhân viên đóng 50% qua khấu trừ lương hàng tháng.\n\n## Quy trình sử dụng\nNhân viên xuất trình thẻ bảo hiểm PVI tại các bệnh viện/phòng khám trong danh sách liên kết. Trường hợp khám ngoài danh sách, nhân viên thanh toán trước và nộp hồ sơ bồi hoàn trong vòng 30 ngày. Thời gian xử lý bồi hoàn: 10-15 ngày làm việc.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình."
+      ],
+      "ground_truth": "KHÔNG. Nhân viên thử việc chưa được hưởng gói bảo hiểm sức khỏe PVI. Chỉ được tham gia bảo hiểm xã hội bắt buộc.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer": "Dựa trên context được cung cấp:\n\n* Về **số ngày phép năm**: Context không đề cập đến số ngày phép năm cụ thể mà một nhân viên (bất kể cấp bậc hay thâm niên như nhân viên Senior có 9 năm thâm niên) được hưởng [1], [2], [3].\n* Về **lương**: Context không đề cập đến mức lương của nhân viên [1], [2], [3].\n\nDo đó, không tìm thấy bằng chứng trong context để trả lời câu hỏi nhân viên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào [1], [2], [3].",
+      "contexts": [
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại."
+      ],
+      "ground_truth": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+      "answer": "Dựa trên các tài liệu được cung cấp, để mua một chiếc laptop 30 triệu (thiết bị CNTT, giá trị trên 10.000.000 VNĐ), cần thực hiện các yêu cầu sau:\n\n*   **Từ phòng CNTT:** Cần có **xác nhận của phòng CNTT về cấu hình kỹ thuật** trước khi đề xuất [1].\n*   **Về việc phê duyệt:** Cần chờ **phê duyệt theo thẩm quyền tương ứng** [1]. *(Lưu ý: Context không cung cấp thông tin cụ thể về chức danh nào sẽ phê duyệt đơn hàng laptop 30 triệu, chỉ nêu chung chung là chờ phê duyệt theo thẩm quyền tương ứng [1]).*\n*   **Các yêu cầu khác đi kèm:** \n    *   Tạo phiếu đề xuất mua sắm trên hệ thống Procurement Portal [1].\n    *   Đính kèm ít nhất 3 báo giá (vì đơn hàng trên 10.000.000 VNĐ) [1].",
+      "contexts": [
+        "## Quy trình đề xuất\n1. Tạo phiếu đề xuất mua sắm trên hệ thống Procurement Portal\n2. Đính kèm ít nhất 3 báo giá cho đơn hàng trên 10.000.000 VNĐ\n3. Chờ phê duyệt theo thẩm quyền tương ứng\n4. Phòng Mua sắm đặt hàng và theo dõi giao nhận\n\n## Lưu ý đặc biệt\nMua sắm thiết bị CNTT (laptop, server, phần mềm) cần có xác nhận của phòng CNTT về cấu hình kỹ thuật trước khi đề xuất. Đơn hàng khẩn cấp có thể bỏ qua yêu cầu 3 báo giá nhưng phải có giải trình bằng văn bản.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt.",
+        "## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**."
+      ],
+      "ground_truth": "Laptop 30 triệu nằm trong khoảng 5-50 triệu nên cần Giám đốc phòng ban (Director) phê duyệt. Ngoài ra, mua sắm thiết bị CNTT cần có xác nhận cấu hình kỹ thuật từ phòng CNTT trước khi đề xuất. Cần đính kèm ít nhất 3 báo giá vì trên 10 triệu.",
+      "faithfulness": 0.8571428571428571,
+      "answer_relevancy": 0.8539617558577074,
+      "context_precision": 0.0,
+      "context_recall": 0.6666666666666666
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng hoàn thành khóa học. Phải hoàn trả bao nhiêu?",
+      "answer": "Dựa trên context được cung cấp, không tìm thấy thông tin về việc nhân viên phải hoàn trả bao nhiêu tiền khi nghỉ việc sau khi hoàn thành khóa học được tài trợ [1], [2], [3].",
+      "contexts": [
+        "## Gói gia đình\nNhân viên có thể đăng ký thêm gói bảo hiểm cho người thân (vợ/chồng, con dưới 18 tuổi) với hạn mức **50.000.000 VNĐ/năm/người**. Chi phí gói gia đình: công ty hỗ trợ 50%, nhân viên đóng 50% qua khấu trừ lương hàng tháng.\n\n## Quy trình sử dụng\nNhân viên xuất trình thẻ bảo hiểm PVI tại các bệnh viện/phòng khám trong danh sách liên kết. Trường hợp khám ngoài danh sách, nhân viên thanh toán trước và nộp hồ sơ bồi hoàn trong vòng 30 ngày. Thời gian xử lý bồi hoàn: 10-15 ngày làm việc.",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình."
+      ],
+      "ground_truth": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không?",
+      "answer": "Dựa trên context được cung cấp, câu trả lời cho từng phần như sau:\n\n* **Mentor và buddy của nhân viên mới có thể là cùng một người không?** Không, Mentor và Buddy phải là hai người khác nhau để đảm bảo nhân viên mới có nhiều nguồn hỗ trợ đa dạng [1].\n* **Quản lý trực tiếp có thể làm mentor không?** Không, quản lý trực tiếp không được làm Mentor [1], [2].",
+      "contexts": [
+        "## Quy tắc quan trọng\nMentor và Buddy phải là **hai người khác nhau** để đảm bảo nhân viên mới có nhiều nguồn hỗ trợ đa dạng. Quản lý trực tiếp không được làm Mentor hoặc Buddy.\n\n## Thời gian chương trình\nBuddy hỗ trợ trong 3 tháng đầu. Mentor đồng hành trong 6 tháng đầu. Sau đó, nhân viên có thể tự chọn mentor dài hạn thông qua chương trình Mentor tự nguyện.",
+        "## Phân biệt Mentor và Buddy\n- **Mentor**: hỗ trợ **chuyên môn kỹ thuật**, hướng dẫn phát triển nghề nghiệp, chia sẻ kiến thức chuyên sâu. Mentor phải là nhân viên cấp Senior trở lên, khác phòng ban hoặc cùng phòng ban nhưng không phải quản lý trực tiếp.\n- **Buddy**: hỗ trợ **văn hóa và hòa nhập**, giúp nhân viên mới làm quen môi trường, giới thiệu đồng nghiệp, hướng dẫn quy trình hàng ngày. Buddy là nhân viên cùng phòng ban, thâm niên từ 6 tháng.",
+        "## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp."
+      ],
+      "ground_truth": "KHÔNG cho cả hai. Mentor và buddy phải là hai người khác nhau. Quản lý trực tiếp không được làm mentor hoặc buddy.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9638001513437966,
+      "context_precision": 0.99999999995,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin cụ thể về việc ai là người phê duyệt cho đơn hàng mua sắm trị giá 55 triệu đồng [1], [2], [3]. \n\nContext chỉ nêu rằng:\n* Tất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính [1].\n* Trong quy trình đề xuất mua sắm, cần \"chờ phê duyệt theo thẩm quyền tương ứng\" [2].\n\nDo thiếu bằng chứng cụ thể về thẩm quyền phê duyệt cho mức giá 55 triệu đồng, phần này không tìm thấy trong dữ liệu [1], [2], [3].",
+      "contexts": [
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt.",
+        "## Quy trình đề xuất\n1. Tạo phiếu đề xuất mua sắm trên hệ thống Procurement Portal\n2. Đính kèm ít nhất 3 báo giá cho đơn hàng trên 10.000.000 VNĐ\n3. Chờ phê duyệt theo thẩm quyền tương ứng\n4. Phòng Mua sắm đặt hàng và theo dõi giao nhận\n\n## Lưu ý đặc biệt\nMua sắm thiết bị CNTT (laptop, server, phần mềm) cần có xác nhận của phòng CNTT về cấu hình kỹ thuật trước khi đề xuất. Đơn hàng khẩn cấp có thể bỏ qua yêu cầu 3 báo giá nhưng phải có giải trình bằng văn bản.",
+        "## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**."
+      ],
+      "ground_truth": "Đơn hàng trên 50.000.000 VNĐ cần Tổng Giám đốc (CEO) phê duyệt.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer": "Dựa trên các tài liệu được cung cấp, nhân viên tạm ứng 15 triệu và sau 20 ngày mới thanh toán sẽ bị áp dụng chính sách phạt quá hạn như sau:\n\n* **Mức phí phạt:** Khoản tạm ứng chưa thanh toán sau 15 ngày sẽ bị tính phí **2%/tháng** trên số tiền chưa hoàn ứng [3]. Phí này được khấu trừ vào lương tháng kế tiếp [3]. \n* **Số tiền phạt cụ thể:** Context không cung cấp thông tin số liệu cụ thể để tính ra số tiền phạt bằng VNĐ cho khoảng thời gian quá hạn cụ thể này (ngoài mức tỷ lệ 2%/tháng trên số tiền chưa hoàn ứng) [3].",
+      "contexts": [
+        "# Chính sách tạm ứng\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Tài chính\n\n## Hạn mức tạm ứng\nNhân viên có thể tạm ứng tối đa **20.000.000 VNĐ** cho mỗi lần đề xuất. Tạm ứng phải ghi rõ mục đích: công tác, mua sắm, tổ chức sự kiện hoặc chi phí dự án.\n\n## Thời hạn thanh toán\nKhoản tạm ứng phải được thanh toán (nộp chứng từ hoàn ứng) trong vòng **15 ngày** kể từ ngày nhận tiền. Trường hợp công tác dài ngày, thời hạn tính từ ngày kết thúc chuyến công tác.",
+        "## Gói gia đình\nNhân viên có thể đăng ký thêm gói bảo hiểm cho người thân (vợ/chồng, con dưới 18 tuổi) với hạn mức **50.000.000 VNĐ/năm/người**. Chi phí gói gia đình: công ty hỗ trợ 50%, nhân viên đóng 50% qua khấu trừ lương hàng tháng.\n\n## Quy trình sử dụng\nNhân viên xuất trình thẻ bảo hiểm PVI tại các bệnh viện/phòng khám trong danh sách liên kết. Trường hợp khám ngoài danh sách, nhân viên thanh toán trước và nộp hồ sơ bồi hoàn trong vòng 30 ngày. Thời gian xử lý bồi hoàn: 10-15 ngày làm việc.",
+        "## Phạt quá hạn\nKhoản tạm ứng chưa thanh toán sau 15 ngày sẽ bị tính phí **2%/tháng** trên số tiền chưa hoàn ứng. Phí này được khấu trừ vào lương tháng kế tiếp. Nhân viên có khoản tạm ứng chưa thanh toán sẽ không được phê duyệt tạm ứng mới.\n\n## Phê duyệt\nTạm ứng dưới 5.000.000 VNĐ: trưởng phòng phê duyệt. Từ 5.000.000 VNĐ trở lên: cần thêm phê duyệt Kế toán trưởng."
+      ],
+      "ground_truth": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày, bị tính phí 2%/tháng trên 15.000.000 VNĐ = 300.000 VNĐ/tháng (tính pro-rata khoảng 50.000 VNĐ cho 5 ngày).",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9618916748857357,
+      "context_precision": 0.3333333333,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin cụ thể về mức lương của nhân viên Junior hoặc mức lương theo từng cấp bậc. Do đó, phần này không tìm thấy trong bằng chứng.",
+      "contexts": [
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Lương thử việc\nNhân viên trong thời gian thử việc được nhận **85% lương** của cấp bậc tương ứng. Sau khi hoàn thành thử việc, lương được điều chỉnh lên 100% kể từ ngày ký hợp đồng chính thức.\n\n## Điều chỉnh lương\nLương được xét tăng 2 lần/năm vào tháng 1 và tháng 7 dựa trên kết quả đánh giá hiệu suất. Mức tăng lương trung bình từ 8-15% tùy theo kết quả đánh giá và ngân sách công ty."
+      ],
+      "ground_truth": "Junior cao nhất là 20.000.000 VNĐ/tháng. Lương thử việc = 85% x 20.000.000 = 17.000.000 VNĐ/tháng.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Thông tin lương thuộc cấp độ phân loại dữ liệu nào?",
+      "answer": "Dựa trên context được cung cấp, không tìm thấy thông tin về việc \"Thông tin lương thuộc cấp độ phân loại dữ liệu nào\" [1], [2], [3].",
+      "contexts": [
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Phụ cấp điện thoại\nNhân viên cấp Manager trở lên được hưởng phụ cấp điện thoại **500.000 VNĐ/tháng**. Nhân viên cấp Lead được hưởng 300.000 VNĐ/tháng. Các cấp bậc khác không có phụ cấp điện thoại.\n\n## Phụ cấp khác\nNhân viên làm việc ca đêm (sau 22h) được phụ cấp 30% lương giờ. Nhân viên làm thêm giờ cuối tuần được tính 200% lương giờ theo quy định pháp luật.",
+        "## Lương thử việc\nNhân viên trong thời gian thử việc được nhận **85% lương** của cấp bậc tương ứng. Sau khi hoàn thành thử việc, lương được điều chỉnh lên 100% kể từ ngày ký hợp đồng chính thức.\n\n## Điều chỉnh lương\nLương được xét tăng 2 lần/năm vào tháng 1 và tháng 7 dựa trên kết quả đánh giá hiệu suất. Mức tăng lương trung bình từ 8-15% tùy theo kết quả đánh giá và ngân sách công ty."
+      ],
+      "ground_truth": "Theo quy chế chi trả lương, thông tin lương được phân loại là dữ liệu Bí mật, cấm chia sẻ với đồng nghiệp. Theo chính sách phân loại dữ liệu, dữ liệu Bí mật (cấp 3) phải mã hóa khi truyền và hạn chế truy cập theo need-to-know.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Nghỉ phép không lương 20 ngày cần ai phê duyệt?",
+      "answer": "Nghỉ phép không lương từ 16-30 ngày cần sự phê duyệt của **Giám đốc điều hành (CEO)** [2].",
+      "contexts": [
+        "# Chính sách nghỉ phép không lương\n> Phiên bản: 1.2 | Ngày hiệu lực: 01/07/2023 | Phòng ban: Nhân sự\n\n## Điều kiện áp dụng\nNhân viên chính thức đã hết phép năm có thể xin nghỉ phép không lương. Thời gian nghỉ phép không lương tối đa là **30 ngày** trong một năm dương lịch. Nghỉ phép không lương không được tính thâm niên.",
+        "## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt."
+      ],
+      "ground_truth": "Nghỉ 16-30 ngày cần phê duyệt của Giám đốc điều hành (CEO). Lưu ý: nghỉ trên 14 ngày không lương, nhân viên phải tự đóng phần bảo hiểm của mình.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8793703954243456,
+      "context_precision": 0.49999999995,
+      "context_recall": 0.5
+    }
+  ],
+  "failures": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến số ngày nhân viên được nghỉ khi kết hôn. Do đó, phần này không tìm thấy bằng chứng trong context.",
+      "ground_truth": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "contexts": [
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt."
+      ],
+      "worst_metric": "answer_relevancy",
+      "score": 0.0,
+      "average_score": 0.25,
+      "diagnosis": "Answer does not match question",
+      "suggested_fix": "Improve prompt template and answer synthesis",
+      "error_tree": "Answer → addresses query? → generation/query intent"
+    },
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer": "Dựa trên context được cung cấp, không tìm thấy thông tin cụ thể về tổng số ngày phép năm mà nhân viên được nghỉ [1], [2], [3]. \n\nContext chỉ đề cập đến các quy định liên quan đến phép năm như sau:\n* Phải đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal [3].\n* Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt [3].\n* Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp [3].\n* Nhân viên có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại [3].",
+      "ground_truth": "Theo chính sách hiện hành (v2024), nhân viên được nghỉ 15 ngày phép năm có lương. Chính sách cũ (v2023) là 12 ngày nhưng đã bị thay thế.",
+      "contexts": [
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại."
+      ],
+      "worst_metric": "answer_relevancy",
+      "score": 0.0,
+      "average_score": 0.25,
+      "diagnosis": "Answer does not match question",
+      "suggested_fix": "Improve prompt template and answer synthesis",
+      "error_tree": "Answer → addresses query? → generation/query intent"
+    },
+    {
+      "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin hay bằng chứng nào nói về việc nhân viên thử việc có được nghỉ phép năm hay không [1], [2], [3].",
+      "ground_truth": "KHÔNG. Nhân viên thử việc KHÔNG được nghỉ phép năm. Nếu cần nghỉ, phải xin nghỉ không lương và được trưởng phòng phê duyệt.",
+      "contexts": [
+        "## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại.",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt."
+      ],
+      "worst_metric": "answer_relevancy",
+      "score": 0.0,
+      "average_score": 0.25,
+      "diagnosis": "Answer does not match question",
+      "suggested_fix": "Improve prompt template and answer synthesis",
+      "error_tree": "Answer → addresses query? → generation/query intent"
+    },
+    {
+      "question": "Nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI không?",
+      "answer": "Dựa trên context được cung cấp, không có thông tin nào đề cập đến việc nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI hay không. Phần này không tìm thấy trong dữ liệu.",
+      "ground_truth": "KHÔNG. Nhân viên thử việc chưa được hưởng gói bảo hiểm sức khỏe PVI. Chỉ được tham gia bảo hiểm xã hội bắt buộc.",
+      "contexts": [
+        "## Gói gia đình\nNhân viên có thể đăng ký thêm gói bảo hiểm cho người thân (vợ/chồng, con dưới 18 tuổi) với hạn mức **50.000.000 VNĐ/năm/người**. Chi phí gói gia đình: công ty hỗ trợ 50%, nhân viên đóng 50% qua khấu trừ lương hàng tháng.\n\n## Quy trình sử dụng\nNhân viên xuất trình thẻ bảo hiểm PVI tại các bệnh viện/phòng khám trong danh sách liên kết. Trường hợp khám ngoài danh sách, nhân viên thanh toán trước và nộp hồ sơ bồi hoàn trong vòng 30 ngày. Thời gian xử lý bồi hoàn: 10-15 ngày làm việc.",
+        "## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt.",
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình."
+      ],
+      "worst_metric": "answer_relevancy",
+      "score": 0.0,
+      "average_score": 0.25,
+      "diagnosis": "Answer does not match question",
+      "suggested_fix": "Improve prompt template and answer synthesis",
+      "error_tree": "Answer → addresses query? → generation/query intent"
+    },
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer": "Dựa trên context được cung cấp:\n\n* Về **số ngày phép năm**: Context không đề cập đến số ngày phép năm cụ thể mà một nhân viên (bất kể cấp bậc hay thâm niên như nhân viên Senior có 9 năm thâm niên) được hưởng [1], [2], [3].\n* Về **lương**: Context không đề cập đến mức lương của nhân viên [1], [2], [3].\n\nDo đó, không tìm thấy bằng chứng trong context để trả lời câu hỏi nhân viên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào [1], [2], [3].",
+      "ground_truth": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "contexts": [
+        "## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo.",
+        "## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại."
+      ],
+      "worst_metric": "answer_relevancy",
+      "score": 0.0,
+      "average_score": 0.25,
+      "diagnosis": "Answer does not match question",
+      "suggested_fix": "Improve prompt template and answer synthesis",
+      "error_tree": "Answer → addresses query? → generation/query intent"
+    }
+  ],
+  "evaluation_status": "complete",
+  "metric_sample_counts": {
+    "faithfulness": 20,
+    "answer_relevancy": 20,
+    "context_precision": 20,
+    "context_recall": 20
+  },
+  "evaluation_provider": "gemini",
+  "evaluation_model": "gemini-3.1-flash-lite",
+  "evaluation_embedding_model": "gemini-embedding-001",
+  "evaluation_checkpoint_reused_questions": 0,
+  "evaluation_checkpoint_total_ms": 948220.614299993,
+  "evaluation_errors": [
+    "RuntimeError: Exception raised in Job[1]: APIConnectionError(Connection error.)"
+  ],
+  "configuration": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.5-flash-lite",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "documents": 26,
+    "chunks": 57,
+    "search": "dense_only"
+  },
+  "latency": {
+    "build_ms": {
+      "load_and_chunk_ms": 107.12150001199916,
+      "index_ms": 22529.182600032073
+    },
+    "per_query": [
+      {
+        "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+        "retrieval_ms": 195.3535999637097,
+        "generation_ms": 1902.4254999822006,
+        "generation_backend": "gemini",
+        "sources": [
+          "dao_tao_noi_bo.md",
+          "nghi_phep_khong_luong.md",
+          "chi_phi_expense.md"
+        ]
+      },
+      {
+        "question": "Bảo hiểm sức khỏe PVI có hạn mức bao nhiêu cho nhân viên?",
+        "retrieval_ms": 52.34599998220801,
+        "generation_ms": 7563.115000026301,
+        "generation_backend": "gemini",
+        "sources": [
+          "bao_hiem_suc_khoe.md",
+          "bao_hiem_suc_khoe.md",
+          "lam_viec_tu_xa.md"
+        ]
+      },
+      {
+        "question": "Phụ cấp ăn trưa hàng tháng là bao nhiêu?",
+        "retrieval_ms": 46.13759997300804,
+        "generation_ms": 1259.1166999773122,
+        "generation_backend": "gemini",
+        "sources": [
+          "cong_tac_phi.md",
+          "phu_cap.md",
+          "mua_sam.md"
+        ]
+      },
+      {
+        "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+        "retrieval_ms": 29.85009999247268,
+        "generation_ms": 4644.518600020092,
+        "generation_backend": "gemini",
+        "sources": [
+          "dao_tao_noi_bo.md",
+          "nghi_phep_khong_luong.md",
+          "nghi_phep_nam_v2024.md"
+        ]
+      },
+      {
+        "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+        "retrieval_ms": 26.180699991527945,
+        "generation_ms": 4098.311299982015,
+        "generation_backend": "gemini",
+        "sources": [
+          "nghi_phep_nam_v2023.md",
+          "nghi_phep_nam_v2024.md",
+          "dao_tao_noi_bo.md"
+        ]
+      },
+      {
+        "question": "Mật khẩu phải có tối thiểu bao nhiêu ký tự?",
+        "retrieval_ms": 46.127499954309314,
+        "generation_ms": 4356.338899990078,
+        "generation_backend": "gemini",
+        "sources": [
+          "mat_khau_v1.md",
+          "mat_khau_v2.md",
+          "mat_khau_v2.md"
+        ]
+      },
+      {
+        "question": "Bao lâu phải đổi mật khẩu một lần?",
+        "retrieval_ms": 56.040600000415,
+        "generation_ms": 4425.977999984752,
+        "generation_backend": "gemini",
+        "sources": [
+          "mat_khau_v2.md",
+          "mat_khau_v1.md",
+          "lam_viec_tu_xa.md"
+        ]
+      },
+      {
+        "question": "Có cần kích hoạt xác thực đa yếu tố (MFA) không?",
+        "retrieval_ms": 46.786799968685955,
+        "generation_ms": 4241.746900021099,
+        "generation_backend": "gemini",
+        "sources": [
+          "mat_khau_v2.md",
+          "lam_viec_tu_xa.md",
+          "mat_khau_v1.md"
+        ]
+      },
+      {
+        "question": "Nhân viên thử việc có được nghỉ phép năm không?",
+        "retrieval_ms": 55.814400024246424,
+        "generation_ms": 3824.118999997154,
+        "generation_backend": "gemini",
+        "sources": [
+          "nghi_phep_nam_v2024.md",
+          "dao_tao_noi_bo.md",
+          "chi_phi_expense.md"
+        ]
+      },
+      {
+        "question": "Khi phát hiện malware trên máy, nhân viên có nên tự xử lý không?",
+        "retrieval_ms": 59.56229998264462,
+        "generation_ms": 4193.215299979784,
+        "generation_backend": "gemini",
+        "sources": [
+          "bao_mat_su_co.md",
+          "bao_mat_su_co.md",
+          "mat_khau_v2.md"
+        ]
+      },
+      {
+        "question": "Nhân viên thử việc có được hưởng bảo hiểm sức khỏe PVI không?",
+        "retrieval_ms": 35.28409998398274,
+        "generation_ms": 4206.143999996129,
+        "generation_backend": "gemini",
+        "sources": [
+          "bao_hiem_suc_khoe.md",
+          "chi_phi_expense.md",
+          "nghi_phep_khong_luong.md"
+        ]
+      },
+      {
+        "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+        "retrieval_ms": 33.148499962408096,
+        "generation_ms": 4580.155699979514,
+        "generation_backend": "gemini",
+        "sources": [
+          "nghi_phep_khong_luong.md",
+          "dao_tao_noi_bo.md",
+          "nghi_phep_nam_v2024.md"
+        ]
+      },
+      {
+        "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+        "retrieval_ms": 33.78380002686754,
+        "generation_ms": 4529.984300024807,
+        "generation_backend": "gemini",
+        "sources": [
+          "mua_sam.md",
+          "chi_phi_expense.md",
+          "nghi_phep_khong_luong.md"
+        ]
+      },
+      {
+        "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng hoàn thành khóa học. Phải hoàn trả bao nhiêu?",
+        "retrieval_ms": 57.338899991009384,
+        "generation_ms": 3876.5851999633014,
+        "generation_backend": "gemini",
+        "sources": [
+          "bao_hiem_suc_khoe.md",
+          "dao_tao_noi_bo.md",
+          "nghi_phep_khong_luong.md"
+        ]
+      },
+      {
+        "question": "Mentor và buddy của nhân viên mới có thể là cùng một người không? Quản lý trực tiếp có thể làm mentor không?",
+        "retrieval_ms": 25.18130000680685,
+        "generation_ms": 4123.409099993296,
+        "generation_backend": "gemini",
+        "sources": [
+          "mentor_buddy.md",
+          "mentor_buddy.md",
+          "mat_khau_v2.md"
+        ]
+      },
+      {
+        "question": "Muốn mua thiết bị trị giá 55 triệu cần ai phê duyệt?",
+        "retrieval_ms": 33.874800021294504,
+        "generation_ms": 4588.735800003633,
+        "generation_backend": "gemini",
+        "sources": [
+          "chi_phi_expense.md",
+          "mua_sam.md",
+          "nghi_phep_khong_luong.md"
+        ]
+      },
+      {
+        "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+        "retrieval_ms": 26.872800022829324,
+        "generation_ms": 4639.229600026738,
+        "generation_backend": "gemini",
+        "sources": [
+          "tam_ung.md",
+          "bao_hiem_suc_khoe.md",
+          "tam_ung.md"
+        ]
+      },
+      {
+        "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+        "retrieval_ms": 49.79849996743724,
+        "generation_ms": 3304.178399965167,
+        "generation_backend": "gemini",
+        "sources": [
+          "nghi_phep_khong_luong.md",
+          "dao_tao_noi_bo.md",
+          "bang_luong_2024.md"
+        ]
+      },
+      {
+        "question": "Thông tin lương thuộc cấp độ phân loại dữ liệu nào?",
+        "retrieval_ms": 15.476000029593706,
+        "generation_ms": 4464.213900035247,
+        "generation_backend": "gemini",
+        "sources": [
+          "nghi_phep_khong_luong.md",
+          "phu_cap.md",
+          "bang_luong_2024.md"
+        ]
+      },
+      {
+        "question": "Nghỉ phép không lương 20 ngày cần ai phê duyệt?",
+        "retrieval_ms": 47.89190000155941,
+        "generation_ms": 3942.7491000387818,
+        "generation_backend": "gemini",
+        "sources": [
+          "nghi_phep_khong_luong.md",
+          "nghi_phep_khong_luong.md",
+          "chi_phi_expense.md"
+        ]
+      }
+    ],
+    "evaluation_ms": 906684.1504999902,
+    "evaluation_retry_ms": 41571.46999996621
+  },
+  "evaluation_provenance": {
+    "note": "Saved baseline answers re-evaluated; generation was not repeated",
+    "generation_model": "gemini-3.5-flash-lite",
+    "previous_evaluation_model": "gemini-3.5-flash-lite"
+  },
+  "evaluation_retries": [
+    {
+      "attempt": 1,
+      "metric": "faithfulness",
+      "question_numbers": [
+        16
+      ],
+      "filled_question_numbers": [
+        16
+      ],
+      "elapsed_ms": 26916.622199991252
+    },
+    {
+      "attempt": 1,
+      "metric": "answer_relevancy",
+      "question_numbers": [
+        16
+      ],
+      "filled_question_numbers": [
+        16
+      ],
+      "elapsed_ms": 14654.84779997496
+    }
+  ]
+}

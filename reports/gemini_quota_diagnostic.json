@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-04T21:32:07.733497+07:00",
+  "probe_model": "gemini-3.5-flash-lite",
+  "chat_probe": {
+    "status": "failed",
+    "http_status": 429,
+    "quota_id": "GenerateRequestsPerDayPerProjectPerModel-FreeTier",
+    "reported_daily_limit": 500,
+    "reported_retry_delay_seconds": 35550
+  },
+  "embedding_probe": {
+    "status": "success",
+    "model": "gemini-embedding-001",
+    "dimension": 3072
+  },
+  "selected_alternative": "gemini-3.1-flash-lite",
+  "alternative_chat_probe": "success",
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing#gemini-3.1-flash-lite",
+  "note": "Chat and embedding probes were observed after the failed run. The failed run itself did not retain per-job RAGAS errors. The earlier completed scores belong to their exact cached inputs; they were not inserted into the later failed run."
+}

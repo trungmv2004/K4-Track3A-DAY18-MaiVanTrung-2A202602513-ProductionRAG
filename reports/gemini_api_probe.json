@@ -1,0 +1,17 @@
+{
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "embedding_model": "gemini-embedding-001",
+  "dataset": "synthetic_api_probe_not_the_lab_corpus",
+  "num_questions": 1,
+  "evaluation_status": "complete",
+  "aggregate": {
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.9238457192790618,
+    "context_precision": 0.9999999999,
+    "context_recall": 1.0
+  },
+  "notes": "Connectivity and adapter probe only; these are not scores for the 20-question assignment.",
+  "unit_tests_passed": 52,
+  "ruff_status": "passed"
+}

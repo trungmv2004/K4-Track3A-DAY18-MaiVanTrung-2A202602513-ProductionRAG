@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-04T21:53:54.259393+07:00",
+  "timezone": "Asia/Bangkok",
+  "profile": "lightweight_gemini",
+  "models": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "enrichment_backends": {
+      "gemini": 101
+    },
+    "enrichment_cache_reused": true,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "reranker_model": "cross-encoder/ms-marco-TinyBERT-L2-v2",
+    "documents": 26,
+    "children": 101,
+    "parent_context_expansion": true,
+    "exclude_superseded_by_default": true,
+    "enrichment_model": "gemini-3.5-flash-lite"
+  },
+  "pytest": {
+    "passed": 73,
+    "failed": 0
+  },
+  "main_exit_code": 0,
+  "main_validation_mode": "--eval-only",
+  "evaluation_runner_exit_code": 0,
+  "evaluation_model": "gemini-3.1-flash-lite",
+  "baseline_generation_model": "gemini-3.5-flash-lite",
+  "standalone_pipeline_exit_code": 0,
+  "standalone_pipeline_validation": {
+    "provider": "offline",
+    "note": "Earlier standalone run executed offline in an isolated directory with in-memory Qdrant. Real Gemini evaluation provenance is recorded separately in the current reports."
+  },
+  "ragas_status": "complete",
+  "baseline_ragas_status": "complete",
+  "metric_sample_counts": {
+    "faithfulness": 20,
+    "answer_relevancy": 20,
+    "context_precision": 20,
+    "context_recall": 20
+  },
+  "generation_backends": {
+    "Baseline": {
+      "gemini": 20
+    },
+    "Production": {
+      "gemini": 20
+    }
+  },
+  "remaining_requirement": null,
+  "cloud_corpus_export_authorized": true,
+  "cloud_corpus_export_performed": true,
+  "commit_performed": false,
+  "push_performed": false,
+  "check_lab_exit_code": 0,
+  "check_lab_remaining_errors": [],
+  "ruff_check": "passed",
+  "remaining_todos": 0,
+  "not_ready_for_submission": false,
+  "rubric_estimate": {
+    "implementation": 60,
+    "pipeline": 10,
+    "ragas_scores": 10,
+    "failure_analysis": 5,
+    "reflection": 15,
+    "bonus_faithfulness": 3,
+    "bonus_combined_enrichment": 2,
+    "bonus_latency": 2,
+    "bonus_all_metrics": 0,
+    "note": "Estimate subject to code/document review; raw threshold comparisons, without rounding"
+  }
+}

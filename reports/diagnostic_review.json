@@ -1,0 +1,1143 @@
+{
+  "selection_method": "mean_four_ragas_metrics_ascending_stable_question_order",
+  "not_ragas": false,
+  "ragas_status": "complete",
+  "configuration": {
+    "llm_provider": "gemini",
+    "llm_model": "gemini-3.1-flash-lite",
+    "enrichment_backends": {
+      "gemini": 101
+    },
+    "enrichment_cache_reused": true,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "reranker_model": "cross-encoder/ms-marco-TinyBERT-L2-v2",
+    "documents": 26,
+    "children": 101,
+    "parent_context_expansion": true,
+    "exclude_superseded_by_default": true,
+    "enrichment_model": "gemini-3.5-flash-lite"
+  },
+  "cases": [
+    {
+      "test_question_number": 4,
+      "question": "Nhân viên được nghỉ bao nhiêu ngày phép năm?",
+      "answer": "Dựa trên các tài liệu được cung cấp:\n\n*   **Đối với nhân viên thử việc:** Nhân viên **KHÔNG được nghỉ phép năm** [1].\n*   **Đối với nhân viên chính thức:** Các tài liệu được cung cấp không nêu rõ số ngày phép năm cụ thể mà nhân viên chính thức được hưởng. Tài liệu chỉ đề cập đến điều kiện xin nghỉ phép không lương khi nhân viên đã \"hết phép năm\" [2] và quy định về việc trừ ngày nghỉ ốm vào phép năm nếu không có giấy tờ y tế hợp lệ [3].",
+      "contexts": [
+        "# Chính sách thử việc\n> Phiên bản: 1.2 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Thời gian thử việc\nThời gian thử việc tiêu chuẩn là **60 ngày** kể từ ngày bắt đầu làm việc. Đối với vị trí quản lý cấp cao (Manager trở lên), thời gian thử việc có thể kéo dài đến 90 ngày.\n\n## Lương thử việc\nNhân viên thử việc được nhận **85% mức lương** của cấp bậc tương ứng theo bảng lương công ty. Phụ cấp ăn trưa được áp dụng đầy đủ từ ngày đầu tiên.\n\n## Quyền lợi trong thử việc\nNhân viên thử việc **KHÔNG được nghỉ phép năm**. Trường hợp cần nghỉ việc riêng, nhân viên thử việc phải xin nghỉ không lương và được trưởng phòng phê duyệt. Nhân viên thử việc được tham gia bảo hiểm xã hội bắt buộc nhưng chưa được hưởng gói bảo hiểm sức khỏe PVI.\n\n## Đánh giá thử việc\nQuản lý trực tiếp thực hiện đánh giá vào ngày thứ 30 (giữa kỳ) và ngày thứ 55 (cuối kỳ). Kết quả đánh giá quyết định việc ký hợp đồng chính thức.",
+        "# Chính sách nghỉ phép không lương\n> Phiên bản: 1.2 | Ngày hiệu lực: 01/07/2023 | Phòng ban: Nhân sự\n\n## Điều kiện áp dụng\nNhân viên chính thức đã hết phép năm có thể xin nghỉ phép không lương. Thời gian nghỉ phép không lương tối đa là **30 ngày** trong một năm dương lịch. Nghỉ phép không lương không được tính thâm niên.\n\n## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**.\n\n## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "# Chính sách nghỉ ốm\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Quy định chung\nNhân viên nghỉ ốm phải nộp giấy xác nhận y tế (giấy khám bệnh hoặc giấy ra viện) trong vòng **3 ngày làm việc** kể từ ngày quay lại làm việc. Nếu không có giấy tờ y tế hợp lệ, ngày nghỉ sẽ bị trừ vào phép năm.\n\n## Chế độ bảo hiểm\nNhân viên được hưởng chế độ nghỉ ốm tối đa **30 ngày/năm** theo bảo hiểm xã hội. Trong thời gian nghỉ ốm có bảo hiểm, nhân viên được hưởng 75% mức lương đóng bảo hiểm. Công ty bổ sung thêm 25% để đảm bảo nhân viên nhận đủ 100% lương cơ bản.\n\n## Nghỉ ốm dài hạn\nTrường hợp nghỉ ốm trên 30 ngày/năm, nhân viên cần liên hệ phòng Nhân sự để được hướng dẫn chế độ bảo hiểm dài hạn. Công ty có quyền yêu cầu khám sức khỏe tổng quát trước khi nhân viên quay lại làm việc."
+      ],
+      "ground_truth": "Theo chính sách hiện hành (v2024), nhân viên được nghỉ 15 ngày phép năm có lương. Chính sách cũ (v2023) là 12 ngày nhưng đã bị thay thế.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0,
+      "average_score": 0.25,
+      "worst_metric": "answer_relevancy",
+      "selected_sources": [
+        {
+          "source": "thu_viec.md",
+          "parent_id": "5ab6318c9dba71ae_parent_0",
+          "version": "1.2",
+          "rerank_score": 8.265118598937988
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "version": "1.2",
+          "rerank_score": 7.748498439788818
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "version": "1.0",
+          "rerank_score": 7.706906318664551
+        }
+      ],
+      "candidates": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.03128054740957967
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rrf_score": 0.031024531024531024
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.029910714285714284
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.029418126757516764
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.02938045560996381
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.02928692699490662
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.02919863597612958
+        },
+        {
+          "source": "thu_viec.md",
+          "parent_id": "5ab6318c9dba71ae_parent_0",
+          "rrf_score": 0.02900988017658188
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rrf_score": 0.02871794871794872
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.028283227848101264
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rrf_score": 0.02803921568627451
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.02638888888888889
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rrf_score": 0.014285714285714285
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.014084507042253521
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.013888888888888888
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rrf_score": 0.0136986301369863
+        },
+        {
+          "source": "hoan_chi_dao_tao.md",
+          "parent_id": "3627d36f86046928_parent_0",
+          "rrf_score": 0.0136986301369863
+        }
+      ],
+      "reranked": [
+        {
+          "source": "thu_viec.md",
+          "parent_id": "5ab6318c9dba71ae_parent_0",
+          "rerank_score": 8.265118598937988
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 7.748498439788818
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rerank_score": 7.706906318664551
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rerank_score": 7.585402488708496
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 7.450554847717285
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 7.106302261352539
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rerank_score": 6.668393135070801
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rerank_score": 6.656674385070801
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 6.649643898010254
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 6.355244159698486
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 6.343376159667969
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 6.329127788543701
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rerank_score": 5.548654556274414
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rerank_score": 4.870309352874756
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rerank_score": 4.811409950256348
+        },
+        {
+          "source": "hoan_chi_dao_tao.md",
+          "parent_id": "3627d36f86046928_parent_0",
+          "rerank_score": 4.738454818725586
+        }
+      ]
+    },
+    {
+      "test_question_number": 12,
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer": "Dựa trên các chính sách được cung cấp, thông tin về nhân viên có 9 năm thâm niên như sau:\n\n*   **Số ngày phép năm:** Nhân viên có 9 năm thâm niên được hưởng **18 ngày phép năm** [2]. (Cách tính: 15 ngày phép tiêu chuẩn + 3 ngày phép cộng thêm cho 9 năm thâm niên, theo quy định cộng 1 ngày cho mỗi 3 năm làm việc liên tục) [2].\n*   **Lương trong thời gian nghỉ phép năm:** Context không cung cấp thông tin cụ thể về mức lương chi tiết hoặc khoảng lương của nhân viên, chỉ nêu rằng đây là số ngày phép **có lương** [2].",
+      "contexts": [
+        "# Chính sách nghỉ phép không lương\n> Phiên bản: 1.2 | Ngày hiệu lực: 01/07/2023 | Phòng ban: Nhân sự\n\n## Điều kiện áp dụng\nNhân viên chính thức đã hết phép năm có thể xin nghỉ phép không lương. Thời gian nghỉ phép không lương tối đa là **30 ngày** trong một năm dương lịch. Nghỉ phép không lương không được tính thâm niên.\n\n## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**.\n\n## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "# Chính sách nghỉ phép năm (Phiên bản 2024)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **15 ngày phép năm** có lương, tăng từ 12 ngày so với chính sách năm 2023. Chính sách này thay thế hoàn toàn phiên bản 1.0 ban hành ngày 01/01/2023.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **3 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 3 năm làm việc liên tục. Ví dụ: nhân viên 9 năm thâm niên được 18 ngày phép (15 + 3).\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại.",
+        "# Chính sách nghỉ ốm\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Quy định chung\nNhân viên nghỉ ốm phải nộp giấy xác nhận y tế (giấy khám bệnh hoặc giấy ra viện) trong vòng **3 ngày làm việc** kể từ ngày quay lại làm việc. Nếu không có giấy tờ y tế hợp lệ, ngày nghỉ sẽ bị trừ vào phép năm.\n\n## Chế độ bảo hiểm\nNhân viên được hưởng chế độ nghỉ ốm tối đa **30 ngày/năm** theo bảo hiểm xã hội. Trong thời gian nghỉ ốm có bảo hiểm, nhân viên được hưởng 75% mức lương đóng bảo hiểm. Công ty bổ sung thêm 25% để đảm bảo nhân viên nhận đủ 100% lương cơ bản.\n\n## Nghỉ ốm dài hạn\nTrường hợp nghỉ ốm trên 30 ngày/năm, nhân viên cần liên hệ phòng Nhân sự để được hướng dẫn chế độ bảo hiểm dài hạn. Công ty có quyền yêu cầu khám sức khỏe tổng quát trước khi nhân viên quay lại làm việc."
+      ],
+      "ground_truth": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9088065985497459,
+      "context_precision": 0.0,
+      "context_recall": 0.5,
+      "average_score": 0.6022016496374365,
+      "worst_metric": "context_precision",
+      "selected_sources": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "version": "1.2",
+          "rerank_score": 6.827314376831055
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "version": "2.0",
+          "rerank_score": 6.341193675994873
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "version": "1.0",
+          "rerank_score": 4.819797515869141
+        }
+      ],
+      "candidates": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.03200204813108039
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rrf_score": 0.029850746268656716
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.029051670471052088
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.028985507246376812
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rrf_score": 0.02871794871794872
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rrf_score": 0.02821939586645469
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.027777777777777776
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.027598020555767037
+        },
+        {
+          "source": "ky_luong.md",
+          "parent_id": "61f3b762fdec51ca_parent_0",
+          "rrf_score": 0.027443609022556388
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rrf_score": 0.02548701298701299
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.01639344262295082
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.015625
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.015625
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "source": "hoan_chi_dao_tao.md",
+          "parent_id": "3627d36f86046928_parent_0",
+          "rrf_score": 0.014285714285714285
+        }
+      ],
+      "reranked": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 6.827314376831055
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 6.341193675994873
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rerank_score": 4.819797515869141
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rerank_score": 4.062204360961914
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rerank_score": 4.030367851257324
+        },
+        {
+          "source": "hoan_chi_dao_tao.md",
+          "parent_id": "3627d36f86046928_parent_0",
+          "rerank_score": 3.6435129642486572
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 3.4514286518096924
+        },
+        {
+          "source": "ky_luong.md",
+          "parent_id": "61f3b762fdec51ca_parent_0",
+          "rerank_score": 3.3093953132629395
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 2.797212600708008
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rerank_score": 2.73286771774292
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rerank_score": 2.4629786014556885
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 1.8461370468139648
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 0.8245515823364258
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 0.7207903861999512
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rerank_score": -2.1172711849212646
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rerank_score": -10.318948745727539
+        }
+      ]
+    },
+    {
+      "test_question_number": 5,
+      "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+      "answer": "Nhân viên có thâm niên từ **3 năm trở lên** thì được cộng thêm ngày phép [3].",
+      "contexts": [
+        "# Chính sách nghỉ phép không lương\n> Phiên bản: 1.2 | Ngày hiệu lực: 01/07/2023 | Phòng ban: Nhân sự\n\n## Điều kiện áp dụng\nNhân viên chính thức đã hết phép năm có thể xin nghỉ phép không lương. Thời gian nghỉ phép không lương tối đa là **30 ngày** trong một năm dương lịch. Nghỉ phép không lương không được tính thâm niên.\n\n## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**.\n\n## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình.",
+        "# Chương trình Mentor & Buddy\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/06/2024 | Phòng ban: Nhân sự\n\n## Phân biệt Mentor và Buddy\n- **Mentor**: hỗ trợ **chuyên môn kỹ thuật**, hướng dẫn phát triển nghề nghiệp, chia sẻ kiến thức chuyên sâu. Mentor phải là nhân viên cấp Senior trở lên, khác phòng ban hoặc cùng phòng ban nhưng không phải quản lý trực tiếp.\n- **Buddy**: hỗ trợ **văn hóa và hòa nhập**, giúp nhân viên mới làm quen môi trường, giới thiệu đồng nghiệp, hướng dẫn quy trình hàng ngày. Buddy là nhân viên cùng phòng ban, thâm niên từ 6 tháng.\n\n## Quy tắc quan trọng\nMentor và Buddy phải là **hai người khác nhau** để đảm bảo nhân viên mới có nhiều nguồn hỗ trợ đa dạng. Quản lý trực tiếp không được làm Mentor hoặc Buddy.\n\n## Thời gian chương trình\nBuddy hỗ trợ trong 3 tháng đầu. Mentor đồng hành trong 6 tháng đầu. Sau đó, nhân viên có thể tự chọn mentor dài hạn thông qua chương trình Mentor tự nguyện.",
+        "# Chính sách nghỉ phép năm (Phiên bản 2024)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **15 ngày phép năm** có lương, tăng từ 12 ngày so với chính sách năm 2023. Chính sách này thay thế hoàn toàn phiên bản 1.0 ban hành ngày 01/01/2023.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **3 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 3 năm làm việc liên tục. Ví dụ: nhân viên 9 năm thâm niên được 18 ngày phép (15 + 3).\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại."
+      ],
+      "ground_truth": "Theo chính sách v2024 hiện hành, nhân viên có thâm niên từ 3 năm trở lên được cộng thêm 1 ngày phép cho mỗi 3 năm. Chính sách cũ v2023 yêu cầu 5 năm.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9377674151473469,
+      "context_precision": 0.0,
+      "context_recall": 0.5,
+      "average_score": 0.6094418537868367,
+      "worst_metric": "context_precision",
+      "selected_sources": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "version": "1.2",
+          "rerank_score": 7.392539978027344
+        },
+        {
+          "source": "mentor_buddy.md",
+          "parent_id": "a197715ff0f099ff_parent_0",
+          "version": "1.0",
+          "rerank_score": 6.917147636413574
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "version": "2.0",
+          "rerank_score": 6.822293758392334
+        }
+      ],
+      "candidates": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.032266458495966696
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.031754032258064516
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.03131881575727918
+        },
+        {
+          "source": "hoan_chi_dao_tao.md",
+          "parent_id": "3627d36f86046928_parent_0",
+          "rrf_score": 0.030536130536130537
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.029206349206349208
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.02919863597612958
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rrf_score": 0.028577260665441927
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.028438886647841874
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rrf_score": 0.02817460317460317
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rrf_score": 0.027783137179239824
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.027443609022556388
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.027205882352941177
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.016129032258064516
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rrf_score": 0.015625
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "source": "mentor_buddy.md",
+          "parent_id": "a197715ff0f099ff_parent_0",
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "source": "phan_loai_du_lieu.md",
+          "parent_id": "c17ab728e4c4437e_parent_0",
+          "rrf_score": 0.013888888888888888
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.0136986301369863
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.013513513513513514
+        },
+        {
+          "source": "mua_sam.md",
+          "parent_id": "1a400ee4ee0d4e44_parent_0",
+          "rrf_score": 0.013333333333333334
+        }
+      ],
+      "reranked": [
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 7.392539978027344
+        },
+        {
+          "source": "mentor_buddy.md",
+          "parent_id": "a197715ff0f099ff_parent_0",
+          "rerank_score": 6.917147636413574
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 6.822293758392334
+        },
+        {
+          "source": "hoan_chi_dao_tao.md",
+          "parent_id": "3627d36f86046928_parent_0",
+          "rerank_score": 6.178915023803711
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rerank_score": 5.360169410705566
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 4.808659553527832
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rerank_score": 4.196566581726074
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "parent_id": "d02b3bc18ea26483_parent_0",
+          "rerank_score": 3.42279314994812
+        },
+        {
+          "source": "nghi_om.md",
+          "parent_id": "715c84851061b566_parent_0",
+          "rerank_score": 3.1600027084350586
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 2.6351311206817627
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 2.5447895526885986
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 2.246983051300049
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rerank_score": 1.9559247493743896
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 1.206407070159912
+        },
+        {
+          "source": "phan_loai_du_lieu.md",
+          "parent_id": "c17ab728e4c4437e_parent_0",
+          "rerank_score": -2.6829214096069336
+        },
+        {
+          "source": "mua_sam.md",
+          "parent_id": "1a400ee4ee0d4e44_parent_0",
+          "rerank_score": -4.332655906677246
+        }
+      ]
+    },
+    {
+      "test_question_number": 17,
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer": "Dựa trên chính sách tạm ứng (Phiên bản 1.0) [1], việc tính toán như sau:\n\n*   **Thời hạn thanh toán:** Khoản tạm ứng phải được thanh toán trong vòng 15 ngày kể từ ngày nhận tiền [1].\n*   **Trạng thái quá hạn:** Nhân viên thanh toán sau 20 ngày, tức là đã quá hạn 5 ngày so với quy định [1].\n*   **Mức phạt:** Khoản tạm ứng chưa thanh toán sau 15 ngày sẽ bị tính phí **2%/tháng** trên số tiền chưa hoàn ứng [1].\n\nVới số tiền tạm ứng là 15.000.000 VNĐ, mức phạt được tính là 2% của 15.000.000 VNĐ cho mỗi tháng quá hạn [1].",
+      "contexts": [
+        "# Chính sách tạm ứng\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Tài chính\n\n## Hạn mức tạm ứng\nNhân viên có thể tạm ứng tối đa **20.000.000 VNĐ** cho mỗi lần đề xuất. Tạm ứng phải ghi rõ mục đích: công tác, mua sắm, tổ chức sự kiện hoặc chi phí dự án.\n\n## Thời hạn thanh toán\nKhoản tạm ứng phải được thanh toán (nộp chứng từ hoàn ứng) trong vòng **15 ngày** kể từ ngày nhận tiền. Trường hợp công tác dài ngày, thời hạn tính từ ngày kết thúc chuyến công tác.\n\n## Phạt quá hạn\nKhoản tạm ứng chưa thanh toán sau 15 ngày sẽ bị tính phí **2%/tháng** trên số tiền chưa hoàn ứng. Phí này được khấu trừ vào lương tháng kế tiếp. Nhân viên có khoản tạm ứng chưa thanh toán sẽ không được phê duyệt tạm ứng mới.\n\n## Phê duyệt\nTạm ứng dưới 5.000.000 VNĐ: trưởng phòng phê duyệt. Từ 5.000.000 VNĐ trở lên: cần thêm phê duyệt Kế toán trưởng.",
+        "# Chính sách nghỉ phép năm (Phiên bản 2024)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **15 ngày phép năm** có lương, tăng từ 12 ngày so với chính sách năm 2023. Chính sách này thay thế hoàn toàn phiên bản 1.0 ban hành ngày 01/01/2023.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **3 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 3 năm làm việc liên tục. Ví dụ: nhân viên 9 năm thâm niên được 18 ngày phép (15 + 3).\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại.",
+        "# Chính sách nghỉ phép không lương\n> Phiên bản: 1.2 | Ngày hiệu lực: 01/07/2023 | Phòng ban: Nhân sự\n\n## Điều kiện áp dụng\nNhân viên chính thức đã hết phép năm có thể xin nghỉ phép không lương. Thời gian nghỉ phép không lương tối đa là **30 ngày** trong một năm dương lịch. Nghỉ phép không lương không được tính thâm niên.\n\n## Quy trình phê duyệt\nĐơn xin nghỉ phép không lương phải được nộp trước ít nhất 7 ngày làm việc. Nghỉ từ 1-5 ngày: trưởng phòng phê duyệt. Nghỉ từ 6-15 ngày: cần thêm phê duyệt của Giám đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**.\n\n## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ trên 14 ngày, nhân viên cần tự đóng phần bảo hiểm của mình."
+      ],
+      "ground_truth": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày, bị tính phí 2%/tháng trên 15.000.000 VNĐ = 300.000 VNĐ/tháng (tính pro-rata khoảng 50.000 VNĐ cho 5 ngày).",
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.9412439093189903,
+      "context_precision": 0.9999999999,
+      "context_recall": 0.5,
+      "average_score": 0.6936443106380809,
+      "worst_metric": "faithfulness",
+      "selected_sources": [
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "version": "1.0",
+          "rerank_score": 7.788155555725098
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "version": "2.0",
+          "rerank_score": 4.647864818572998
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "version": "1.2",
+          "rerank_score": 4.477829933166504
+        }
+      ],
+      "candidates": [
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rrf_score": 0.03278688524590164
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rrf_score": 0.03200204813108039
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rrf_score": 0.031754032258064516
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rrf_score": 0.029437229437229435
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.028484848484848488
+        },
+        {
+          "source": "phu_cap.md",
+          "parent_id": "474dbc23e61590f0_parent_0",
+          "rrf_score": 0.02690501986276634
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.015873015873015872
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rrf_score": 0.015625
+        },
+        {
+          "source": "cong_tac_phi.md",
+          "parent_id": "db74b4badb5b1d37_parent_0",
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.015384615384615385
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rrf_score": 0.014925373134328358
+        },
+        {
+          "source": "cong_tac_phi.md",
+          "parent_id": "db74b4badb5b1d37_parent_0",
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "source": "nghi_phep_nam_v2023.md",
+          "parent_id": "85cda70dafcddfb4_parent_0",
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "source": "vpn_truy_cap.md",
+          "parent_id": "dd4f21b3bdde7bed_parent_0",
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rrf_score": 0.014492753623188406
+        },
+        {
+          "source": "lam_viec_tu_xa.md",
+          "parent_id": "665eb5e2e3f5e095_parent_0",
+          "rrf_score": 0.014285714285714285
+        },
+        {
+          "source": "cong_tac_phi.md",
+          "parent_id": "db74b4badb5b1d37_parent_0",
+          "rrf_score": 0.014084507042253521
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rrf_score": 0.013888888888888888
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rrf_score": 0.013888888888888888
+        }
+      ],
+      "reranked": [
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rerank_score": 7.788155555725098
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rerank_score": 5.882751941680908
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rerank_score": 5.356907367706299
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 4.647864818572998
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 4.477829933166504
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rerank_score": 4.183323860168457
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 3.6929898262023926
+        },
+        {
+          "source": "bao_hiem_suc_khoe.md",
+          "parent_id": "20d30a3f8646c074_parent_0",
+          "rerank_score": 3.0065412521362305
+        },
+        {
+          "source": "cong_tac_phi.md",
+          "parent_id": "db74b4badb5b1d37_parent_0",
+          "rerank_score": 2.4218809604644775
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rerank_score": 2.170640707015991
+        },
+        {
+          "source": "phu_cap.md",
+          "parent_id": "474dbc23e61590f0_parent_0",
+          "rerank_score": 1.9503438472747803
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "parent_id": "f4b7a1e26af9072a_parent_0",
+          "rerank_score": 1.8957585096359253
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "parent_id": "1d68c3776ad3b27b_parent_0",
+          "rerank_score": 1.469364881515503
+        },
+        {
+          "source": "vpn_truy_cap.md",
+          "parent_id": "dd4f21b3bdde7bed_parent_0",
+          "rerank_score": 1.113060474395752
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rerank_score": -0.9081335067749023
+        },
+        {
+          "source": "lam_viec_tu_xa.md",
+          "parent_id": "665eb5e2e3f5e095_parent_0",
+          "rerank_score": -1.373557209968567
+        },
+        {
+          "source": "cong_tac_phi.md",
+          "parent_id": "db74b4badb5b1d37_parent_0",
+          "rerank_score": -2.843442440032959
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rerank_score": -4.523571014404297
+        },
+        {
+          "source": "cong_tac_phi.md",
+          "parent_id": "db74b4badb5b1d37_parent_0",
+          "rerank_score": -4.834438323974609
+        }
+      ]
+    },
+    {
+      "test_question_number": 7,
+      "question": "Bao lâu phải đổi mật khẩu một lần?",
+      "answer": "Mật khẩu phải được thay đổi mỗi 120 ngày [2].",
+      "contexts": [
+        "So tay An toan Lao dong va Phong chay\nAn toàn phòng cháy chữa cháy\nBình chữa cháy được đặt tại mỗi tầng, kiểm tra định kỳ 6 tháng một lần.\nLối thoát hiểm phải luôn thông thoáng, không được để vật cản.\nKhi có cháy, tập trung tại bãi đỗ xe phía trước tòa nhà theo hướng dẫn.\nSơ cứu y tế\nTủ thuốc sơ cứu đặt tại khu vực pantry mỗi tầng.\nMỗi phòng ban cử ít nhất 1 nhân viên được tập huấn sơ cứu cơ bản.\nAn toàn dữ liệu vật lý\nTài liệu mật phải được hủy bằng máy hủy giấy, không bỏ vào thùng rác thường.\nPhòng máy chủ chỉ cho phép nhân viên CNTT có thẻ truy cập ra vào.",
+        "# Chính sách mật khẩu (Phiên bản hiện hành)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/07/2024 | Phòng ban: CNTT\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **12 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt (!@#$%^&*). Khuyến khích sử dụng passphrase dài hơn 16 ký tự.\n\n## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp.\n\n## Chính sách thay thế\nVăn bản này thay thế Chính sách mật khẩu v1.0 ban hành ngày 01/01/2022.",
+        "# Quy trình chi phí và hoàn ứng\n> Phiên bản: 1.3 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Tài chính\n\n## Thời hạn nộp hồ sơ\nNhân viên phải nộp hồ sơ hoàn ứng chi phí trong vòng **7 ngày** kể từ ngày phát sinh chi phí. Hồ sơ nộp trễ quá 30 ngày sẽ không được xử lý, trừ trường hợp đặc biệt có giải trình của trưởng phòng.\n\n## Chứng từ yêu cầu\nMọi chi phí **trên 200.000 VNĐ** phải có **hóa đơn hoặc biên lai** hợp lệ. Chi phí dưới 200.000 VNĐ có thể khai báo không cần hóa đơn nhưng phải ghi rõ mục đích và ngày phát sinh.\n\n## Phê duyệt\nTất cả chi phí cần được phê duyệt bởi **quản lý trực tiếp** trước khi nộp phòng Tài chính. Thời gian xử lý hoàn ứng: 5-10 ngày làm việc sau khi hồ sơ đầy đủ và được phê duyệt.\n\n## Lưu ý\nChi phí công tác phải tuân theo Chính sách công tác phí riêng. Hai chính sách cùng áp dụng: chi phí công tác theo định mức công tác phí, chi phí khác theo quy trình hoàn ứng chung."
+      ],
+      "ground_truth": "Theo chính sách hiện hành (v2.0), mật khẩu phải được thay đổi mỗi 120 ngày. Chính sách cũ yêu cầu 90 ngày nhưng đã bị thay thế.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9278477258842243,
+      "context_precision": 0.49999999995,
+      "context_recall": 0.5,
+      "average_score": 0.731961931458556,
+      "worst_metric": "context_precision",
+      "selected_sources": [
+        {
+          "source": "so_tay_an_toan.pdf",
+          "parent_id": "7cf95534aa882fb6_parent_0",
+          "version": "",
+          "rerank_score": 3.928922653198242
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "version": "2.0",
+          "rerank_score": 1.531378984451294
+        },
+        {
+          "source": "chi_phi_expense.md",
+          "parent_id": "faf6883c6936af7b_parent_0",
+          "version": "1.3",
+          "rerank_score": 0.3267703652381897
+        }
+      ],
+      "candidates": [
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rrf_score": 0.03252247488101534
+        },
+        {
+          "source": "mat_khau_v1.md",
+          "parent_id": "673c5fdb2f695131_parent_0",
+          "rrf_score": 0.031746031746031744
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rrf_score": 0.031009615384615385
+        },
+        {
+          "source": "mat_khau_v1.md",
+          "parent_id": "673c5fdb2f695131_parent_0",
+          "rrf_score": 0.0304147465437788
+        },
+        {
+          "source": "mat_khau_v1.md",
+          "parent_id": "673c5fdb2f695131_parent_0",
+          "rrf_score": 0.030309988518943745
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rrf_score": 0.03009207275993712
+        },
+        {
+          "source": "mat_khau_v1.md",
+          "parent_id": "673c5fdb2f695131_parent_0",
+          "rrf_score": 0.028258706467661692
+        },
+        {
+          "source": "so_tay_an_toan.pdf",
+          "parent_id": "7cf95534aa882fb6_parent_0",
+          "rrf_score": 0.027479766610201392
+        },
+        {
+          "source": "phan_loai_du_lieu.md",
+          "parent_id": "c17ab728e4c4437e_parent_0",
+          "rrf_score": 0.02715098147128967
+        },
+        {
+          "source": "bao_mat_su_co.md",
+          "parent_id": "86a717e87e1910d2_parent_0",
+          "rrf_score": 0.027031963470319637
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rrf_score": 0.02667140825035562
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rrf_score": 0.015625
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "source": "mua_sam.md",
+          "parent_id": "1a400ee4ee0d4e44_parent_0",
+          "rrf_score": 0.015151515151515152
+        },
+        {
+          "source": "lam_viec_tu_xa.md",
+          "parent_id": "665eb5e2e3f5e095_parent_0",
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "source": "lam_viec_tu_xa.md",
+          "parent_id": "665eb5e2e3f5e095_parent_0",
+          "rrf_score": 0.014705882352941176
+        },
+        {
+          "source": "bao_mat_su_co.md",
+          "parent_id": "86a717e87e1910d2_parent_0",
+          "rrf_score": 0.014285714285714285
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rrf_score": 0.014084507042253521
+        },
+        {
+          "source": "chi_phi_expense.md",
+          "parent_id": "faf6883c6936af7b_parent_0",
+          "rrf_score": 0.014084507042253521
+        },
+        {
+          "source": "danh_gia_hieu_suat.md",
+          "parent_id": "6baea8d39a4ec7bb_parent_0",
+          "rrf_score": 0.013888888888888888
+        }
+      ],
+      "reranked": [
+        {
+          "source": "so_tay_an_toan.pdf",
+          "parent_id": "7cf95534aa882fb6_parent_0",
+          "rerank_score": 3.928922653198242
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rerank_score": 1.531378984451294
+        },
+        {
+          "source": "chi_phi_expense.md",
+          "parent_id": "faf6883c6936af7b_parent_0",
+          "rerank_score": 0.3267703652381897
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rerank_score": -1.2284754514694214
+        },
+        {
+          "source": "lam_viec_tu_xa.md",
+          "parent_id": "665eb5e2e3f5e095_parent_0",
+          "rerank_score": -1.905297875404358
+        },
+        {
+          "source": "bao_mat_su_co.md",
+          "parent_id": "86a717e87e1910d2_parent_0",
+          "rerank_score": -2.622316837310791
+        },
+        {
+          "source": "lam_viec_tu_xa.md",
+          "parent_id": "665eb5e2e3f5e095_parent_0",
+          "rerank_score": -3.2712039947509766
+        },
+        {
+          "source": "dao_tao_noi_bo.md",
+          "parent_id": "5c3c8ef1ad2c6db1_parent_0",
+          "rerank_score": -3.2821450233459473
+        },
+        {
+          "source": "bao_mat_su_co.md",
+          "parent_id": "86a717e87e1910d2_parent_0",
+          "rerank_score": -3.9448161125183105
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rerank_score": -5.211693286895752
+        },
+        {
+          "source": "danh_gia_hieu_suat.md",
+          "parent_id": "6baea8d39a4ec7bb_parent_0",
+          "rerank_score": -5.647780895233154
+        },
+        {
+          "source": "tam_ung.md",
+          "parent_id": "c327fab0abedf471_parent_0",
+          "rerank_score": -6.005237579345703
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "parent_id": "fc8edbaa38be0a66_parent_0",
+          "rerank_score": -6.383286952972412
+        },
+        {
+          "source": "phan_loai_du_lieu.md",
+          "parent_id": "c17ab728e4c4437e_parent_0",
+          "rerank_score": -6.516982078552246
+        },
+        {
+          "source": "mua_sam.md",
+          "parent_id": "1a400ee4ee0d4e44_parent_0",
+          "rerank_score": -7.59467887878418
+        },
+        {
+          "source": "mat_khau_v2.md",
+          "parent_id": "a520032f1294b4c4_parent_0",
+          "rerank_score": -9.70102310180664
+        }
+      ]
+    }
+  ],
+  "trace_provenance": "Local replay on the recovered index/models; selected sources verified against report"
+}

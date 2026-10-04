@@ -2,7 +2,11 @@ from __future__ import annotations
 
 """Module 3: Reranking — Cross-encoder top-20 → top-3 + latency benchmark."""
 
-import os, sys, time
+import os
+import sys
+import time
+from functools import lru_cache
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 if hasattr(sys.stderr, "reconfigure"):
@@ -10,7 +14,14 @@ if hasattr(sys.stderr, "reconfigure"):
 from dataclasses import dataclass
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from config import RERANK_TOP_K
+from config import MODEL_CACHE_DIR, RERANK_MODEL, RERANK_TOP_K
+
+
+@lru_cache(maxsize=2)
+def _cross_encoder(model_name):
+    from sentence_transformers import CrossEncoder
+
+    return CrossEncoder(model_name, cache_folder=MODEL_CACHE_DIR)
 
 
 @dataclass
@@ -23,51 +34,67 @@ class RerankResult:
 
 
 class CrossEncoderReranker:
-    def __init__(self, model_name: str = "BAAI/bge-reranker-v2-m3"):
+    def __init__(self, model_name: str = RERANK_MODEL):
         self.model_name = model_name
         self._model = None
 
     def _load_model(self):
         if self._model is None:
-            # TODO: Load cross-encoder model
-            # from sentence_transformers import CrossEncoder
-            # self._model = CrossEncoder(self.model_name)
-            #
-            # ⚠️ LƯU Ý: Dùng sentence_transformers.CrossEncoder, KHÔNG dùng FlagEmbedding.
-            # FlagReranker crash với transformers>=5.0 (XLMRobertaTokenizer lỗi).
-            pass
+            self._model = _cross_encoder(self.model_name)
         return self._model
 
     def rerank(self, query: str, documents: list[dict], top_k: int = RERANK_TOP_K) -> list[RerankResult]:
         """Rerank documents: top-20 → top-k."""
-        # TODO: Implement reranking
-        # 1. if not documents: return []
-        # 2. model = self._load_model()
-        # 3. pairs = [(query, doc["text"]) for doc in documents]
-        # 4. scores = model.predict(pairs)
-        # 5. if isinstance(scores, (int, float)): scores = [scores]
-        # 6. scored = sorted(zip(scores, documents), key=lambda x: x[0], reverse=True)
-        # 7. Return [RerankResult(text=..., original_score=doc.get("score", 0.0),
-        #            rerank_score=float(score), metadata=..., rank=i)
-        #            for i, (score, doc) in enumerate(scored[:top_k])]
-        return []
+        import numpy as np
+
+        if not documents or top_k <= 0:
+            return []
+        scores = np.asarray(self._load_model().predict([(query, doc["text"]) for doc in documents])).reshape(
+            -1
+        )
+        if len(scores) != len(documents):
+            raise ValueError("CrossEncoder returned an unexpected number of scores")
+        ranked = sorted(zip(scores, documents), key=lambda pair: float(pair[0]), reverse=True)[:top_k]
+        return [
+            RerankResult(
+                doc["text"], float(doc.get("score", 0)), float(score), doc.get("metadata", {}), i + 1
+            )
+            for i, (score, doc) in enumerate(ranked)
+        ]
 
 
 class FlashrankReranker:
     """Lightweight alternative (<5ms). Optional."""
+
     def __init__(self):
         self._model = None
 
     def rerank(self, query: str, documents: list[dict], top_k: int = RERANK_TOP_K) -> list[RerankResult]:
-        # TODO (optional): from flashrank import Ranker, RerankRequest
-        # model = Ranker(); passages = [{"text": d["text"]} for d in documents]
-        # results = model.rerank(RerankRequest(query=query, passages=passages))
-        return []
+        from flashrank import Ranker, RerankRequest
+
+        if not documents or top_k <= 0:
+            return []
+        if self._model is None:
+            self._model = Ranker(cache_dir=os.path.join(MODEL_CACHE_DIR, "flashrank"))
+        passages = [{"id": i, "text": d["text"]} for i, d in enumerate(documents)]
+        ranked = self._model.rerank(RerankRequest(query=query, passages=passages))[:top_k]
+        return [
+            RerankResult(
+                r["text"],
+                float(documents[r["id"]].get("score", 0)),
+                float(r["score"]),
+                documents[r["id"]].get("metadata", {}),
+                i + 1,
+            )
+            for i, r in enumerate(ranked)
+        ]
 
 
 def benchmark_reranker(reranker, query: str, documents: list[dict], n_runs: int = 5) -> dict:
     """Benchmark latency over n_runs. (Đã implement sẵn)"""
     times = []
+    if n_runs <= 0:
+        raise ValueError("n_runs must be positive")
     for _ in range(n_runs):
         start = time.perf_counter()
         reranker.rerank(query, documents)

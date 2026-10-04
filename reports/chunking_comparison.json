@@ -1,0 +1,32 @@
+{
+  "scope": "combined_corpus_diagnostic_only",
+  "documents": 26,
+  "semantic_threshold": 0.85,
+  "strategies": {
+    "basic": {
+      "count": 51,
+      "avg_len": 410,
+      "min_len": 273,
+      "max_len": 565
+    },
+    "semantic": {
+      "count": 208,
+      "avg_len": 99,
+      "min_len": 6,
+      "max_len": 354
+    },
+    "hierarchical": {
+      "count": 99,
+      "avg_len": 211,
+      "min_len": 9,
+      "max_len": 256,
+      "parents": 11
+    },
+    "structure": {
+      "count": 106,
+      "avg_len": 196,
+      "min_len": 86,
+      "max_len": 788
+    }
+  }
+}
